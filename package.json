@@ -1,0 +1,24 @@
+{
+  "name": "keap-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Keap MCP plugin for LobeChat",
+  "homepage": "https://developer.keap.com",
+  "repository": "https://github.com/lobehub/chat-plugin-template.git",
+  "scripts": {
+    "dev": "next dev -p 3400",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@lobehub/chat-plugin-sdk": "^1",
+    "next": "13.4.7",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "18",
+    "typescript": "^5"
+  }
+}

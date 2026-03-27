@@ -1,0 +1,2809 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Keap MCP API",
+    "version": "1.0.0",
+    "description": "LobeChat plugin endpoints that proxy Keap API v2 using PAT/SAK."
+  },
+  "servers": [
+    {
+      "url": "https://keap.4spotconsulting.com"
+    }
+  ],
+  "paths": {
+    "/api/keap_add_contacts_to_campaign_sequence": {
+      "post": {
+        "operationId": "keap_add_contacts_to_campaign_sequence",
+        "summary": "Add Contacts to Campaign Sequence",
+        "description": "Adds a list of contacts to a campaign sequence\nResponse contains a map of the provided list of Contact Ids related to their individual result.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_add_product_option_list_option_value": {
+      "post": {
+        "operationId": "keap_add_product_option_list_option_value",
+        "summary": "Add a Product Option List Option Value",
+        "description": "Adds product option values to a product option of type LIST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_adjust_inventory": {
+      "post": {
+        "operationId": "keap_adjust_inventory",
+        "summary": "Adjust Inventory of a Product",
+        "description": "Increase or decrease the quantity of the Product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_apply_commission_on_order_items": {
+      "post": {
+        "operationId": "keap_apply_commission_on_order_items",
+        "summary": "Apply Commission to an Order Item",
+        "description": "Applies commission to an order item on an existing order.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_apply_tags": {
+      "post": {
+        "operationId": "keap_apply_tags",
+        "summary": "Apply Tag",
+        "description": "Applies a Tag to a list of Contacts.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_apply_tax": {
+      "post": {
+        "operationId": "keap_apply_tax",
+        "summary": "Apply Taxes on an Order",
+        "description": "Calculate taxes for a single Order for a given order id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_attach_file_to_order": {
+      "post": {
+        "operationId": "keap_attach_file_to_order",
+        "summary": "Attach a File to an Order Invoice",
+        "description": "Attaches an uploaded File to an Order Invoice",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_company": {
+      "post": {
+        "operationId": "keap_create_company",
+        "summary": "Create a Company",
+        "description": "Creates a new Company.`country_code` is required if `region` is specified.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_contact": {
+      "post": {
+        "operationId": "keap_create_contact",
+        "summary": "Create a Contact",
+        "description": "Creates a new Contact.\n*Note:* Contact must contain at least one item in `email_addresses` or `phone_numbers` and `country_code` is required if `region` is specified.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_contact_link_type": {
+      "post": {
+        "operationId": "keap_create_contact_link_type",
+        "summary": "Create a Contact Link type",
+        "description": "Creates a new type of Contact Link",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_email": {
+      "post": {
+        "operationId": "keap_create_email",
+        "summary": "Create an Email Record",
+        "description": "Creates a Record of an Email sent to a Contact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_emails": {
+      "post": {
+        "operationId": "keap_create_emails",
+        "summary": "Create a set of Email Records",
+        "description": "Creates a set of Records of Emails sent to Contacts, maximum 1000 per transaction.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_file": {
+      "post": {
+        "operationId": "keap_create_file",
+        "summary": "Create a file",
+        "description": "Creates a file and uploads it",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_note": {
+      "post": {
+        "operationId": "keap_create_note",
+        "summary": "Create a Note",
+        "description": "Creates a new Note.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_note_custom_field": {
+      "post": {
+        "operationId": "keap_create_note_custom_field",
+        "summary": "Create a Custom Field",
+        "description": "Creates a custom field of the specified type and options to the Note object<br/>Note: Custom Fields for Tasks, Classic Appointments and Notes are combined.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_opportunity": {
+      "post": {
+        "operationId": "keap_create_opportunity",
+        "summary": "Create an Opportunity",
+        "description": "Creates a new opportunity as the authenticated user.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_opportunity_custom_fields": {
+      "post": {
+        "operationId": "keap_create_opportunity_custom_fields",
+        "summary": "Create an Opportunity Custom Field",
+        "description": "Creates a custom field of the specified type and options to the Opportunity object",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_opportunity_stage": {
+      "post": {
+        "operationId": "keap_create_opportunity_stage",
+        "summary": "Create an Opportunity Stage",
+        "description": "Creates a new Opportunity Stage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_order": {
+      "post": {
+        "operationId": "keap_create_order",
+        "summary": "Create an Order",
+        "description": "Creates a one time Order with Order items",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_order_custom_field": {
+      "post": {
+        "operationId": "keap_create_order_custom_field",
+        "summary": "Create an Order Custom Field",
+        "description": "Creates a custom field of the specified type and options to the Order object",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_order_item": {
+      "post": {
+        "operationId": "keap_create_order_item",
+        "summary": "Create an Order Item",
+        "description": "Creates an order item on an existing order",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_payment_for_an_order": {
+      "post": {
+        "operationId": "keap_create_payment_for_an_order",
+        "summary": "Create a Payment",
+        "description": "Creates a payment record. Alternatively, adds a record of historical or external payment of cash or credit card",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_product": {
+      "post": {
+        "operationId": "keap_create_product",
+        "summary": "Create a Product",
+        "description": "Creates a new product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_product_image": {
+      "post": {
+        "operationId": "keap_create_product_image",
+        "summary": "Create the Product Image",
+        "description": "Creates the Product Image file and uploads it to the specified Product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_product_option": {
+      "post": {
+        "operationId": "keap_create_product_option",
+        "summary": "Create a Product Option",
+        "description": "Creates a new product option",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_tag": {
+      "post": {
+        "operationId": "keap_create_tag",
+        "summary": "Create Tag",
+        "description": "Creates a new Tag",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_tag_category": {
+      "post": {
+        "operationId": "keap_create_tag_category",
+        "summary": "Create Tag Category",
+        "description": "Creates a new Tag Category.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_task": {
+      "post": {
+        "operationId": "keap_create_task",
+        "summary": "Create a Task",
+        "description": "Creates a new task as the authenticated user.  \nThis endpoint does not currently support setting Custom Field values.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_create_task_custom_field": {
+      "post": {
+        "operationId": "keap_create_task_custom_field",
+        "summary": "Create a Custom Field",
+        "description": "Creates a custom field of the specified type and options to the Task object<br/>Note: Custom Fields for Tasks, Classic Appointments and Notes are combined.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_company": {
+      "post": {
+        "operationId": "keap_delete_company",
+        "summary": "Delete a Company",
+        "description": "Deletes the specified Company",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_contact": {
+      "post": {
+        "operationId": "keap_delete_contact",
+        "summary": "Delete a Contact",
+        "description": "Deletes the specified Contact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_email": {
+      "post": {
+        "operationId": "keap_delete_email",
+        "summary": "Delete an Email Record",
+        "description": "Deletes a specific Email Record",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_emails": {
+      "post": {
+        "operationId": "keap_delete_emails",
+        "summary": "Remove a set of Email Records",
+        "description": "Removes a set of Email Records",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_file": {
+      "post": {
+        "operationId": "keap_delete_file",
+        "summary": "Delete a file",
+        "description": "Deletes a specified file",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_note": {
+      "post": {
+        "operationId": "keap_delete_note",
+        "summary": "Delete a Note",
+        "description": "Deletes the specified Note",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_opportunity": {
+      "post": {
+        "operationId": "keap_delete_opportunity",
+        "summary": "Delete an Opportunity",
+        "description": "Deletes the specified Opportunity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_opportunity_stage": {
+      "post": {
+        "operationId": "keap_delete_opportunity_stage",
+        "summary": "Delete an Opportunity Stage",
+        "description": "Deletes the specified Opportunity Stage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_order": {
+      "post": {
+        "operationId": "keap_delete_order",
+        "summary": "Delete an Order",
+        "description": "Deletes an Order<br/>\nNote: The Order must not have any transactions recorded to be available for deletion.\n",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_order_custom_field": {
+      "post": {
+        "operationId": "keap_delete_order_custom_field",
+        "summary": "Delete an Order Custom Field",
+        "description": "Deletes a Custom Field from the Order object",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_order_item": {
+      "post": {
+        "operationId": "keap_delete_order_item",
+        "summary": "Delete an Order Item",
+        "description": "Deletes an order item on an existing order",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_product": {
+      "post": {
+        "operationId": "keap_delete_product",
+        "summary": "Delete a Product",
+        "description": "Deletes a single product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_product_image": {
+      "post": {
+        "operationId": "keap_delete_product_image",
+        "summary": "Delete the Product Image",
+        "description": "Deletes the Product Image from the specified Product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_product_option": {
+      "post": {
+        "operationId": "keap_delete_product_option",
+        "summary": "Delete a Product Option",
+        "description": "Deletes a single product option",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_product_option_list_option_value": {
+      "post": {
+        "operationId": "keap_delete_product_option_list_option_value",
+        "summary": "Delete a Product Option List Item",
+        "description": "Deletes a single option value in a Product Option of type LIST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_tag": {
+      "post": {
+        "operationId": "keap_delete_tag",
+        "summary": "Delete Tag",
+        "description": "Deletes a Tag.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_tag_category": {
+      "post": {
+        "operationId": "keap_delete_tag_category",
+        "summary": "Delete Tag Category",
+        "description": "Deletes the specified Tag Category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_task": {
+      "post": {
+        "operationId": "keap_delete_task",
+        "summary": "Delete a Task",
+        "description": "Deletes a single task",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_delete_task_custom_field": {
+      "post": {
+        "operationId": "keap_delete_task_custom_field",
+        "summary": "Delete a Custom Field",
+        "description": "Deletes a Custom Field from the Task object<br/>Note: Custom Fields for Tasks, Classic Appointments and Notes are combined.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_detach_file_from_order": {
+      "post": {
+        "operationId": "keap_detach_file_from_order",
+        "summary": "Detach a File from an Order Invoice",
+        "description": "Detaches a File from an Order Invoice",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_campaign": {
+      "post": {
+        "operationId": "keap_get_campaign",
+        "summary": "Retrieve a Campaign",
+        "description": "Retrieves a single campaign",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_campaign_goals": {
+      "post": {
+        "operationId": "keap_get_campaign_goals",
+        "summary": "Retrieve a list of Goals for a Campaign",
+        "description": "Retrieves a list of Goals (published) for a Campaign",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_campaign_sequences": {
+      "post": {
+        "operationId": "keap_get_campaign_sequences",
+        "summary": "Retrieve a list of Sequences for a Campaign",
+        "description": "Retrieves a list of Sequences (published) for a Campaign",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_category": {
+      "post": {
+        "operationId": "keap_get_category",
+        "summary": "Retrieve a Tag Category",
+        "description": "Returns information about the specified Tag Category",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_company": {
+      "post": {
+        "operationId": "keap_get_company",
+        "summary": "Retrieve a Company",
+        "description": "Retrieves a single Company",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_contact": {
+      "post": {
+        "operationId": "keap_get_contact",
+        "summary": "Retrieve a Contact",
+        "description": "Retrieves a single Contact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_email": {
+      "post": {
+        "operationId": "keap_get_email",
+        "summary": "Retrieve an Email",
+        "description": "Retrieves a single Email that has been sent",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_email_address_status": {
+      "post": {
+        "operationId": "keap_get_email_address_status",
+        "summary": "Retrieve an Email Address status",
+        "description": "Retrieves the opt-in status for a given Email Address",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_email_template": {
+      "post": {
+        "operationId": "keap_get_email_template",
+        "summary": "Retrieve an email template",
+        "description": "Retrieve an email template",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_file": {
+      "post": {
+        "operationId": "keap_get_file",
+        "summary": "Retrieve a file",
+        "description": "Retrieves a file",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_file_data": {
+      "post": {
+        "operationId": "keap_get_file_data",
+        "summary": "Retrieve a file's data",
+        "description": "Retrieves a file's data",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_html": {
+      "post": {
+        "operationId": "keap_get_html",
+        "summary": "Get Webform HTML",
+        "description": "Returns the HTML",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_note": {
+      "post": {
+        "operationId": "keap_get_note",
+        "summary": "Retrieve a Note",
+        "description": "Retrieves the specified Note",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_opportunity": {
+      "post": {
+        "operationId": "keap_get_opportunity",
+        "summary": "Retrieve a Opportunity",
+        "description": "Retrieves the specified Opportunity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_opportunity_stage": {
+      "post": {
+        "operationId": "keap_get_opportunity_stage",
+        "summary": "Retrieve an Opportunity Stage",
+        "description": "Retrieves the specified Opportunity Stage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_order": {
+      "post": {
+        "operationId": "keap_get_order",
+        "summary": "Retrieve an Order",
+        "description": "Retrieves a single Order for a given order id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_product": {
+      "post": {
+        "operationId": "keap_get_product",
+        "summary": "Get a Product",
+        "description": "Gets a single Product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_product_option": {
+      "post": {
+        "operationId": "keap_get_product_option",
+        "summary": "Get Product Option",
+        "description": "Retrieves a Product Option",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_tag": {
+      "post": {
+        "operationId": "keap_get_tag",
+        "summary": "Retrieve a Tag",
+        "description": "Retrieves information about the specified Tag",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_task": {
+      "post": {
+        "operationId": "keap_get_task",
+        "summary": "Retrieve a Task",
+        "description": "Retrieves a single task",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_user_by_id": {
+      "post": {
+        "operationId": "keap_get_user_by_id",
+        "summary": "Get User",
+        "description": "Retrieves a specific User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_user_group": {
+      "post": {
+        "operationId": "keap_get_user_group",
+        "summary": "Retrieve a User Group",
+        "description": "Retrieves a single user group by its ID.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_user_info": {
+      "post": {
+        "operationId": "keap_get_user_info",
+        "summary": "Retrieve User Info",
+        "description": "Retrieves information for the current authenticated end-user, as outlined by the [OpenID Connect specification](http://openid.net/specs/openid-connect-core-1_0.html#UserInfo).",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_get_user_signature": {
+      "post": {
+        "operationId": "keap_get_user_signature",
+        "summary": "Get User email signature",
+        "description": "Retrieves a HTML snippet that contains the user's email signature.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_link_contacts": {
+      "post": {
+        "operationId": "keap_link_contacts",
+        "summary": "Link Contacts",
+        "description": "Links two Contacts together using the provided Link type",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_campaigns": {
+      "post": {
+        "operationId": "keap_list_campaigns",
+        "summary": "List Campaigns",
+        "description": "Retrieves a list of campaigns for the authenticated user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_companies": {
+      "post": {
+        "operationId": "keap_list_companies",
+        "summary": "List Companies",
+        "description": "Retrieves a list of all Companies.<br/><br/>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_companies_for_tag_id": {
+      "post": {
+        "operationId": "keap_list_companies_for_tag_id",
+        "summary": "List Tagged Companies",
+        "description": "Retrieves a list of Companies that have the given Tag applied.\nTo search for `null` or empty fields use `filter==NONE`",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_contact_link_types": {
+      "post": {
+        "operationId": "keap_list_contact_link_types",
+        "summary": "List Contact Link types",
+        "description": "Retrieves a list of Contact Link types.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_contact_links": {
+      "post": {
+        "operationId": "keap_list_contact_links",
+        "summary": "List Linked Contacts",
+        "description": "Retrieves a list of Linked Contacts for a given Contact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_contacts": {
+      "post": {
+        "operationId": "keap_list_contacts",
+        "summary": "List Contacts",
+        "description": "Retrieves a list of Contacts",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_contacts_with_tag_id": {
+      "post": {
+        "operationId": "keap_list_contacts_with_tag_id",
+        "summary": "List Tagged Contacts",
+        "description": "Retrieves a list of Contacts with the specified Tag\nTo search for `null` or empty fields use `filter==NONE`",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_emails": {
+      "post": {
+        "operationId": "keap_list_emails",
+        "summary": "List Emails",
+        "description": "Retrieves a list of emails that have been sent",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_files": {
+      "post": {
+        "operationId": "keap_list_files",
+        "summary": "List all files",
+        "description": "Retrieves a list of files",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_note_templates": {
+      "post": {
+        "operationId": "keap_list_note_templates",
+        "summary": "Retrieve Note Templates",
+        "description": "Retrieves a list of Note Templates",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_notes": {
+      "post": {
+        "operationId": "keap_list_notes",
+        "summary": "List Notes",
+        "description": "Retrieves a list of Notes",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_opportunities": {
+      "post": {
+        "operationId": "keap_list_opportunities",
+        "summary": "List Opportunities",
+        "description": "Retrieves a list of all Opportunities.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_opportunity_stages": {
+      "post": {
+        "operationId": "keap_list_opportunity_stages",
+        "summary": "List of Opportunity Stages",
+        "description": "Retrieves a list of Opportunity Stages.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_order_payments": {
+      "post": {
+        "operationId": "keap_list_order_payments",
+        "summary": "Retrieve Order Payments",
+        "description": "Retrieves a list of payments made against a given order, including historical or external payments of cash or credit card",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_orders": {
+      "post": {
+        "operationId": "keap_list_orders",
+        "summary": "List orders",
+        "description": "Retrieves a list of orders",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_paginated_users": {
+      "post": {
+        "operationId": "keap_list_paginated_users",
+        "summary": "List Users",
+        "description": "Retrieves a list of users",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_product_options": {
+      "post": {
+        "operationId": "keap_list_product_options",
+        "summary": "List Product Options",
+        "description": "Retrieves all options of a Product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_products": {
+      "post": {
+        "operationId": "keap_list_products",
+        "summary": "List Products",
+        "description": "Retrieves a list of Products",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_tag_categories": {
+      "post": {
+        "operationId": "keap_list_tag_categories",
+        "summary": "List Tag Categories",
+        "description": "Retrieves a list of defined Tag Categories\nTo search for `null` or empty fields use `filter==NONE`",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_tags": {
+      "post": {
+        "operationId": "keap_list_tags",
+        "summary": "List Tags",
+        "description": "Retrieves a list of Tags defined in the application\nTo search for `null` or empty fields use `filter==NONE`",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_tags_for_contact": {
+      "post": {
+        "operationId": "keap_list_tags_for_contact",
+        "summary": "List Applied Tags",
+        "description": "Retrieves a list of tags applied to the specified Contact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_tasks": {
+      "post": {
+        "operationId": "keap_list_tasks",
+        "summary": "List Tasks",
+        "description": "Retrieves a list of tasks based on the provided filter. Tasks which are not assigned to a User may be queried with user_id==UNASSIGNED.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_user_groups": {
+      "post": {
+        "operationId": "keap_list_user_groups",
+        "summary": "List User Groups",
+        "description": "Retrieves a list of all user groups in the application.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_list_webforms": {
+      "post": {
+        "operationId": "keap_list_webforms",
+        "summary": "List Webforms with filter",
+        "description": "Retrieves a list of webforms",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_remove_contacts_from_campaign_sequence": {
+      "post": {
+        "operationId": "keap_remove_contacts_from_campaign_sequence",
+        "summary": "Remove Contacts from Campaign Sequence",
+        "description": "Removes a list of contacts from a campaign sequence\nResponse contains a map of the provided list of Contact Ids related to their individual result.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_remove_tags": {
+      "post": {
+        "operationId": "keap_remove_tags",
+        "summary": "Remove Tags",
+        "description": "Removes a Tag from a list of Contacts.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_retrieve_contact_model": {
+      "post": {
+        "operationId": "keap_retrieve_contact_model",
+        "summary": "Retrieve Contact Model",
+        "description": "Get the custom fields and optional properties for the Contact object",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_retrieve_note_model": {
+      "post": {
+        "operationId": "keap_retrieve_note_model",
+        "summary": "Retrieve Note Model",
+        "description": "Gets the custom fields for the Note object<br/>Note: Custom Fields for Tasks, Classic Appointments and Notes are combined.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_retrieve_order_custom_field_model": {
+      "post": {
+        "operationId": "keap_retrieve_order_custom_field_model",
+        "summary": "Retrieve Order Custom Field Model",
+        "description": "Gets the custom fields for the Order object",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_retrieve_task_model": {
+      "post": {
+        "operationId": "keap_retrieve_task_model",
+        "summary": "Retrieve Task Model",
+        "description": "Get the custom fields for the Task object<br/>Note: Custom Fields for Tasks, Classic Appointments and Notes are combined.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_send_email": {
+      "post": {
+        "operationId": "keap_send_email",
+        "summary": "Send an Email",
+        "description": "Sends an Email to a list of Contacts",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_send_email_template": {
+      "post": {
+        "operationId": "keap_send_email_template",
+        "summary": "Send an email based on a template",
+        "description": "Send an email based on a template",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_unlink_contacts": {
+      "post": {
+        "operationId": "keap_unlink_contacts",
+        "summary": "Delete Link between two Contacts",
+        "description": "Deletes Link between two Contacts",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_company": {
+      "post": {
+        "operationId": "keap_update_company",
+        "summary": "Update a Company",
+        "description": "Updates a Company with the values provided in the request",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_contact": {
+      "post": {
+        "operationId": "keap_update_contact",
+        "summary": "Update a Contact",
+        "description": "Updates a Contact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_email_address_opt_status": {
+      "post": {
+        "operationId": "keap_update_email_address_opt_status",
+        "summary": "Update an Email Address opt-in status",
+        "description": "Updates an Email Address opt-in status\n\nYou may opt-in or mark an email address as _Marketable_ by including the following field in the request JSON\nwith an opt-in reason. (This field is also shown in the complete request body sample.)\nThe reason you provide here will help with compliance.\nExample reasons: \"Customer opted-in through webform\", \"Company gave explicit permission.\"\n\n```json\n\"opt_in_reason\": \"your reason for opt-in\"\n```\nNote that the email address status will only be updated to `Unconfirmed` (marketable) for email addresses\nthat are currently in the following states:\n- `Unengaged Marketable`\n- `Unengaged Non-Marketable`\n- `Non-Marketable`\n- `Opt-Out: Manual`\n\nAll other existing statuses e.g. `List Unsubscribe`, `Opt-Out`, `System` etc will remain non-marketable and in their existing state.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_file": {
+      "post": {
+        "operationId": "keap_update_file",
+        "summary": "Update a file",
+        "description": "Updates a file. Note that this endpoint is using a POST method instead of PATCH.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_note": {
+      "post": {
+        "operationId": "keap_update_note",
+        "summary": "Update a Note",
+        "description": "Updates a Note for a Contact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_notes_custom_field": {
+      "post": {
+        "operationId": "keap_update_notes_custom_field",
+        "summary": "Update a Custom Field",
+        "description": "Updates a custom field of the specified type and options to the Note object<br/>Note: Custom Fields for Tasks, Classic Appointments and Notes are combined.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_opportunity": {
+      "post": {
+        "operationId": "keap_update_opportunity",
+        "summary": "Update an opportunity",
+        "description": "Updates specified values of a given opportunity",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_opportunity_custom_field": {
+      "post": {
+        "operationId": "keap_update_opportunity_custom_field",
+        "summary": "Update a Opportunity's Custom Field",
+        "description": "Updates a custom field of the specified type and options to the Opportunity object.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_opportunity_stage": {
+      "post": {
+        "operationId": "keap_update_opportunity_stage",
+        "summary": "Update an Opportunity Stage",
+        "description": "Updates specified values of a given Opportunity Stage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_order": {
+      "post": {
+        "operationId": "keap_update_order",
+        "summary": "Update an Order",
+        "description": "Updates an Order",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_order_custom_field": {
+      "post": {
+        "operationId": "keap_update_order_custom_field",
+        "summary": "Update an Order Custom Field",
+        "description": "Updates a custom field of the specified type and options to the Order object",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_order_item": {
+      "post": {
+        "operationId": "keap_update_order_item",
+        "summary": "Update an Order Item",
+        "description": "Updates an Order Item",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_product": {
+      "post": {
+        "operationId": "keap_update_product",
+        "summary": "Update a Product",
+        "description": "Updates a product",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_product_option": {
+      "post": {
+        "operationId": "keap_update_product_option",
+        "summary": "Updates a Product Option",
+        "description": "Updates a product option",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_product_option_list_option_value": {
+      "post": {
+        "operationId": "keap_update_product_option_list_option_value",
+        "summary": "Updates a Product Option List Option Value",
+        "description": "Updates a single product option value",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_tag": {
+      "post": {
+        "operationId": "keap_update_tag",
+        "summary": "Update a Tag",
+        "description": "Updates a Tag with only the values provided in the request",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_tag_category": {
+      "post": {
+        "operationId": "keap_update_tag_category",
+        "summary": "Update a Tag Category",
+        "description": "Updates a Tag Category with only the values provided in the request",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_task": {
+      "post": {
+        "operationId": "keap_update_task",
+        "summary": "Update a Task",
+        "description": "Updates a task with only the values provided in the request. \nThis endpoint does not currently support updating Custom Field values.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_task_custom_field": {
+      "post": {
+        "operationId": "keap_update_task_custom_field",
+        "summary": "Update a Task's Custom Field",
+        "description": "Updates a custom field of the specified type and options to the Task object.<br/>Note: Custom Fields for Tasks, Classic Appointments and Notes are combined.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/keap_update_user": {
+      "post": {
+        "operationId": "keap_update_user",
+        "summary": "Update User",
+        "description": "Updates information on a specific User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

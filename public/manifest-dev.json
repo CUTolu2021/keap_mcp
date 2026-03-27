@@ -1,0 +1,27 @@
+{
+  "$schema": "../node_modules/@lobehub/chat-plugin-sdk/schema.json",
+  "api": [],
+  "author": "LobeHub",
+  "createdAt": "2023-09-03",
+  "gateway": "http://localhost:3400/api/gateway",
+  "openapi": "http://localhost:3400/openapi.json",
+  "homepage": "https://developer.keap.com",
+  "identifier": "keap-mcp-4spot",
+  "settings": {
+    "type": "object",
+    "properties": {
+      "access_token": {
+        "type": "string",
+        "description": "Access token required to use this plugin"
+      }
+    },
+    "required": ["access_token"]
+  },
+  "meta": {
+    "avatar": "K",
+    "tags": ["keap", "crm", "sales", "marketing"],
+    "title": "Keap MCP",
+    "description": "Keap CRM operations via PAT/SAK"
+  },
+  "version": "1"
+}
